@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <title>Contact Us - Visit Morocco</title>
+    <style>
+        .contact__container {
+            padding: 5rem 0;
+            background-color: var(--secondary-color);
+            background-image: linear-gradient(
+                rgba(35, 71, 103, 0.5),
+                rgba(35, 71, 103, 0.5)
+            ), url('/assets/images/bg-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--extra-light);
+        }
+
+        .contact__form-container {
+            max-width: var(--max-width);
+            margin: auto;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact__form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .form__group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form__group label {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .form__group input,
+        .form__group textarea {
+            padding: 1rem;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .form__group input:focus,
+        .form__group textarea:focus {
+            outline: none;
+            border: 2px solid var(--primary-color);
+        }
+
+        .contact__form textarea {
+            grid-column: span 2;
+            resize: none;
+        }
+
+        button[type="submit"] {
+            grid-column: span 2;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+            color: var(--extra-light);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--primary-color-dark);
+        }
+
+        .section__title, .section__subtitle {
+            text-align: center;
+            color: var(--extra-light);
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav__logo"><a href="/">Visit Morocco</a></div>
+    <ul class="nav__links">
+        <li class="link"><a href="/" style="color: black; text-decoration: none;">Home</a></li>
+        <li class="link"><a href="/offers" style="color: black; text-decoration: none;">Offers</a></li>
+        <li class="link"><a href="/services" style="color: black; text-decoration: none;">Services</a></li>
+        <li class="link"><a href="/contacts" style="color: black; text-decoration: none;">Contacts</a></li>
+    </ul>
+</nav>
+
+<section class="contact__container">
+    <div class="contact__form-container">
+        <h2 class="section__title">Contact Us</h2>
+        <p class="section__subtitle">We'd love to hear from you! Fill out the form below and we'll be in touch soon.</p>
+        <form action="#" th:action="@{/contacts}" th:object="${contact}" method="post" class="contact__form">
+            <div class="form__group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" th:field="*{name}" placeholder="Your Full Name" required>
+            </div>
+            <div class="form__group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" th:field="*{email}" placeholder="Your Email Address" required>
+            </div>
+            <div class="form__group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" th:field="*{phone}" placeholder="Your Phone Number" required>
+            </div>
+            <div class="form__group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" th:field="*{message}" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="section__container">
+        <h4>Visit Morocco</h4>
+        <div class="social__icons">
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-linkedin-fill"></i></span>
+        </div>
+        <p>"Travel makes one modest. You see what a tiny place you occupy in the world."</p>
+    </div>
+</footer>
+</body>
+</html>

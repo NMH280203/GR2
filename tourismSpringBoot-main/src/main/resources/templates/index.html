@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  <title>Visit Morocco</title>
+</head>
+<body>
+<nav>
+  <div class="nav__logo"><a href="#">Visit Morocco</a></div>
+  <ul class="nav__links">
+    <li class="link"><a href="/" style="color: black; text-decoration: none;">Home</a></li>
+    <li class="link"><a href="/offers" style="color: black; text-decoration: none;">Offers</a></li>
+    <li class="link"><a href="/services" style="color: black; text-decoration: none;">Services</a></li>
+    <li class="link"><a href="/contacts" style="color: black; text-decoration: none;">Contacts</a></li>
+  </ul>
+</nav>
+
+<header style="background-image: url('/assets/images/morocco.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh; display: flex; align-items: center; color: #fff;">
+  <div class="section__container">
+    <div class="header__content" style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px;">
+      <h1 style="color: white; text-decoration: none;">Travel</h1>
+      <p>
+        Embark on a journey of a lifetime and explore Morocco's most
+        breathtaking destinations with our expert travel advice.
+        From exotic cities to cultural wonders, we've got you covered with our
+        comprehensive travel guides and insider tips.
+      </p>
+      <button>Read more</button>
+    </div>
+  </div>
+</header>
+
+
+<section class="journey__container">
+  <div class="section__container">
+    <h2 class="section__title">The Most Searched Cities in Morocco</h2>
+    <p class="section__subtitle">Discover the destinations that everyone is talking about.</p>
+
+    <div class="slider" style="
+      --width: 200px;
+      --height: 150px;
+      --quantity: 6;
+    ">
+      <div class="list">
+        <th:block th:each="city, status : ${cities}">
+          <div class="item" th:style="'--position: ' + (${status.index} + 1)">
+            <img th:src="@{/assets/images/} + ${city.imageUrl}" th:alt="${city.name}">
+            <p th:text="${city.name}"></p>
+          </div>
+        </th:block>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banner__container" style="background-image: url('/assets/images/bg-banner.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 60px 0; color: #fff;">
+  <div class="section__container">
+    <div class="banner__content" style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px;">
+      <h2>Discount 10-30% Off</h2>
+      <p>
+        Travel Morocco on a budget with our unbeatable discounted travel
+        deals. Whether you're looking for a last-minute escape or planning
+        ahead, we've got you covered with incredible discounts on hotels and packages.
+        Don't wait, book now and experience the adventure of a lifetime without breaking the bank.
+      </p>
+      <button>See Tours</button>
+    </div>
+  </div>
+</section>
+
+<section class="display__container">
+  <div class="section__container">
+    <h2 class="section__title">Why Choose Us</h2>
+    <p class="section__subtitle">
+      The gladdest moment in human life, is a departure into unknown lands.
+    </p>
+    <div class="display__grid">
+      <div class="display__card grid-1">
+        <img th:src="@{/assets/images/grid-1.jpg}" alt="grid" />
+      </div>
+      <div class="display__card">
+        <i class="ri-earth-line"></i>
+        <h4>Passionate Travel</h4>
+        <p>Fuel your passion for adventure and discover new horizons</p>
+      </div>
+      <div class="display__card">
+        <img th:src="@{/assets/images/grid-2.jpg}" alt="grid" />
+      </div>
+      <div class="display__card">
+        <img th:src="@{/assets/images/grid-3.jpg}" alt="grid" />
+      </div>
+      <div class="display__card">
+        <i class="ri-road-map-line"></i>
+        <h4>Beautiful Places</h4>
+        <p>Uncover Morocco's most breathtakingly beautiful places</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="section__container">
+    <h4>Visit Morocco</h4>
+    <div class="social__icons">
+      <span><i class="ri-facebook-fill"></i></span>
+      <span><i class="ri-twitter-fill"></i></span>
+      <span><i class="ri-instagram-line"></i></span>
+      <span><i class="ri-linkedin-fill"></i></span>
+    </div>
+    <p>
+      Travel makes one modest. You see what a tiny place you occupy in the
+      world.
+    </p>
+  </div>
+</footer>
+</body>
+</html>
