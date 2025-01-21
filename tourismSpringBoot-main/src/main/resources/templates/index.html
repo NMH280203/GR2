@@ -4,32 +4,69 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" th:href="@{/css/styles.css}" />
-  <title>Visit Morocco</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <title>Visit Việt Nam</title>
+  <style>
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      z-index: 1000;
+      display: none;
+    }
+
+    .popup.hidden {
+      display: none;
+    }
+
+    .popup-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
 <nav>
-  <div class="nav__logo"><a href="#">Visit Morocco</a></div>
+  <div class="nav__logo"><a href="#">Visit Việt Nam</a></div>
   <ul class="nav__links">
     <li class="link"><a href="/" style="color: black; text-decoration: none;">Home</a></li>
     <li class="link"><a href="/offers" style="color: black; text-decoration: none;">Offers</a></li>
     <li class="link"><a href="/services" style="color: black; text-decoration: none;">Services</a></li>
     <li class="link"><a href="/contacts" style="color: black; text-decoration: none;">Contacts</a></li>
+    <li class="link"><a href="/post" style="color: black; text-decoration: none;">Post</a></li>
+    <li class="link"><a href="/tours" style="color: black; text-decoration: none;">Tour trong nước</a></li>
+    <li class="link"><a href="/reviews" style="color: black; text-decoration: none;">Reviews</a></li>
   </ul>
 </nav>
 
-<header style="background-image: url('/assets/images/morocco.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh; display: flex; align-items: center; color: #fff;">
+<header style="background-image: url('/assets/images/hanoi.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh; display: flex; align-items: center; color: #fff;">
   <div class="section__container">
     <div class="header__content" style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px;">
-      <h1 style="color: white; text-decoration: none;">Travel</h1>
+      <h1 style="color: white; text-decoration: none;">Du lịch</h1>
       <p>
-        Embark on a journey of a lifetime and explore Morocco's most
-        breathtaking destinations with our expert travel advice.
-        From exotic cities to cultural wonders, we've got you covered with our
-        comprehensive travel guides and insider tips.
+        Hãy bắt đầu một hành trình đáng nhớ trong đời và khám phá những
+        điểm đến ngoạn mục nhất của Việt Nam với lời khuyên du lịch chuyên nghiệp của chúng tôi.
+        Từ những thành phố kỳ lạ đến những kỳ quan văn hóa, chúng tôi sẽ cung cấp cho bạn
+        những hướng dẫn du lịch toàn diện và mẹo từ người trong cuộc.
       </p>
-      <button>Read more</button>
+      <a href="/offers">
+        <button>Tìm hiểu thêm</button>
+      </a>
+
     </div>
   </div>
 </header>
@@ -37,8 +74,8 @@
 
 <section class="journey__container">
   <div class="section__container">
-    <h2 class="section__title">The Most Searched Cities in Morocco</h2>
-    <p class="section__subtitle">Discover the destinations that everyone is talking about.</p>
+    <h2 class="section__title">Những thành phố được tìm kiếm nhiều nhất ở Việt Nam</h2>
+    <p class="section__subtitle">Khám phá những điểm đến đang được mọi người nhắc đến.</p>
 
     <div class="slider" style="
       --width: 200px;
@@ -60,23 +97,25 @@
 <section class="banner__container" style="background-image: url('/assets/images/bg-banner.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 60px 0; color: #fff;">
   <div class="section__container">
     <div class="banner__content" style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px;">
-      <h2>Discount 10-30% Off</h2>
+      <h2>Giảm giá 10-30%</h2>
       <p>
-        Travel Morocco on a budget with our unbeatable discounted travel
-        deals. Whether you're looking for a last-minute escape or planning
-        ahead, we've got you covered with incredible discounts on hotels and packages.
-        Don't wait, book now and experience the adventure of a lifetime without breaking the bank.
+        Du lịch Việt Nam với ngân sách eo hẹp cùng các ưu đãi du lịch giảm giá không gì sánh bằng của chúng tôi
+        . Cho dù bạn đang tìm kiếm một chuyến đi nghỉ vào phút chót hay đang lập kế hoạch
+        trước, chúng tôi đều có các ưu đãi giảm giá đáng kinh ngạc cho khách sạn và các gói dịch vụ.
+        Đừng chần chừ nữa, hãy đặt ngay và trải nghiệm cuộc phiêu lưu của cuộc đời mà không tốn kém.
       </p>
-      <button>See Tours</button>
+      <a href="/tours">
+        <button>See Tours</button>
+      </a>
     </div>
   </div>
 </section>
 
 <section class="display__container">
   <div class="section__container">
-    <h2 class="section__title">Why Choose Us</h2>
+    <h2 class="section__title">Tại sao chọn chúng tôi</h2>
     <p class="section__subtitle">
-      The gladdest moment in human life, is a departure into unknown lands.
+      Khoảnh khắc vui mừng nhất trong cuộc đời con người là được đi đến những vùng đất xa lạ.
     </p>
     <div class="display__grid">
       <div class="display__card grid-1">
@@ -84,8 +123,8 @@
       </div>
       <div class="display__card">
         <i class="ri-earth-line"></i>
-        <h4>Passionate Travel</h4>
-        <p>Fuel your passion for adventure and discover new horizons</p>
+        <h4>Du lịch đam mê</h4>
+        <p>Thổi bùng niềm đam mê phiêu lưu và khám phá những chân trời mới</p>
       </div>
       <div class="display__card">
         <img th:src="@{/assets/images/grid-2.jpg}" alt="grid" />
@@ -95,8 +134,8 @@
       </div>
       <div class="display__card">
         <i class="ri-road-map-line"></i>
-        <h4>Beautiful Places</h4>
-        <p>Uncover Morocco's most breathtakingly beautiful places</p>
+        <h4>Những địa điểm đẹp</h4>
+        <p>Khám phá những địa điểm đẹp ngoạn mục nhất của Việt Nam</p>
       </div>
     </div>
   </div>
@@ -104,7 +143,7 @@
 
 <footer>
   <div class="section__container">
-    <h4>Visit Morocco</h4>
+    <h4>Visit Việt Nam</h4>
     <div class="social__icons">
       <span><i class="ri-facebook-fill"></i></span>
       <span><i class="ri-twitter-fill"></i></span>
@@ -112,8 +151,7 @@
       <span><i class="ri-linkedin-fill"></i></span>
     </div>
     <p>
-      Travel makes one modest. You see what a tiny place you occupy in the
-      world.
+      Du lịch làm cho con người trở nên khiêm tốn. Bạn thấy mình nhỏ bé như thế nào trong thế giới này.
     </p>
   </div>
 </footer>

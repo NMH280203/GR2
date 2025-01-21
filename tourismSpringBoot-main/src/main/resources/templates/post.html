@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post City</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
-    <title>Liên hệ với chúng tôi - Visit Việt Nam</title>
     <style>
         .contact__container {
             padding: 5rem 0;
             background-color: var(--secondary-color);
             background-image: linear-gradient(
-                rgba(35, 71, 103, 0.5),
-                rgba(35, 71, 103, 0.5)
+                    rgba(35, 71, 103, 0.5),
+                    rgba(35, 71, 103, 0.5)
             ), url('/assets/images/bg-banner.jpg');
             background-size: cover;
             background-position: center;
@@ -82,11 +82,12 @@
             text-align: center;
             color: var(--extra-light);
         }
+
     </style>
 </head>
 <body>
 <nav>
-    <div class="nav__logo"><a href="/">Visit Việt Nam</a></div>
+    <div class="nav__logo"><a href="#">Du lịch Việt Nam</a></div>
     <ul class="nav__links">
         <li class="link"><a href="/" style="color: black; text-decoration: none;">Home</a></li>
         <li class="link"><a href="/offers" style="color: black; text-decoration: none;">Offers</a></li>
@@ -98,43 +99,37 @@
     </ul>
 </nav>
 
+<!-- Hiển thị thông báo thành công -->
+<div style="color: green;">
+    <p th:if="${successMessage}" th:text="${successMessage}"></p>
+</div>
+
+<!-- Hiển thị thông báo lỗi -->
+<div style="color: red;">
+    <p th:if="${errorMessage}" th:text="${errorMessage}"></p>
+</div>
+
 <section class="contact__container">
     <div class="contact__form-container">
-        <h2 class="section__title">Liên hệ với chúng tôi</h2>
-        <p class="section__subtitle">Chúng tôi rất mong nhận được phản hồi từ bạn! Hãy điền vào mẫu dưới đây và chúng tôi sẽ sớm liên hệ với bạn.</p>
-        <form action="#" th:action="@{/contacts}" th:object="${contact}" method="post" class="contact__form">
+        <h2 class="section__title">Đăng Bài</h2>
+        <p class="section__subtitle">Hãy điền vào mẫu dưới đây để đăng bài mới!</p>
+        <form action="#" th:action="@{/post}" th:object="${city}" method="post" enctype="multipart/form-data" class="contact__form">
             <div class="form__group">
-                <label for="name">Tên</label>
-                <input type="text" id="name" name="name" th:field="*{name}" placeholder="Your Full Name" required>
+                <label for="name">Tên Thành Phố</label>
+                <input type="text" id="name" name="name" th:field="*{name}" placeholder="Tên Thành Phố" required>
             </div>
             <div class="form__group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" th:field="*{email}" placeholder="Your Email Address" required>
+                <label for="description">Mô Tả</label>
+                <textarea id="description" name="description" th:field="*{description}" rows="5" placeholder="Mô Tả Thành Phố" required></textarea>
             </div>
             <div class="form__group">
-                <label for="phone">Liên lạc</label>
-                <input type="tel" id="phone" name="phone" th:field="*{phone}" placeholder="Your Phone Number" required>
+                <label for="imageFile">Ảnh</label>
+                <input type="file" id="imageFile" name="imageFile" required>
             </div>
-            <div class="form__group">
-                <label for="message">Lời nhắn</label>
-                <textarea id="message" name="message" th:field="*{message}" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit">Gửi</button>
+            <button type="submit">Đăng</button>
         </form>
     </div>
 </section>
 
-<footer>
-    <div class="section__container">
-        <h4>Visit Việt Nam</h4>
-        <div class="social__icons">
-            <span><i class="ri-facebook-fill"></i></span>
-            <span><i class="ri-twitter-fill"></i></span>
-            <span><i class="ri-instagram-line"></i></span>
-            <span><i class="ri-linkedin-fill"></i></span>
-        </div>
-        <p>"Du lịch làm cho con người trở nên khiêm tốn. Bạn thấy mình nhỏ bé biết bao trên thế giới này."</p>
-    </div>
-</footer>
 </body>
 </html>

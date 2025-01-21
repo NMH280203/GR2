@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Offers - Visit Morocco</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <title>Khuyến mại đặc biệt- Du lịch Việt Nam</title>
 
   <style>
     * {
@@ -15,7 +16,7 @@
 
     body {
         background-image: url(/assets/images/zelij.jpg);
-        background-size: '100%';
+        background-size: cover;
         overflow: hidden;
         font-family: 'Arial', sans-serif;
     }
@@ -149,11 +150,26 @@
         background: #ababab;
         color: #fff;
     }
+    nav{
+      z-index: 1;
+      top: -10px;
+    }
   </style>
 
 </head>
 <body>
-
+<nav>
+  <div class="nav__logo"><a href="#">Visit Việt Nam</a></div>
+  <ul class="nav__links">
+    <li class="link"><a href="/" style="color: black; text-decoration: none;">Home</a></li>
+    <li class="link"><a href="/offers" style="color: black; text-decoration: none;">Offers</a></li>
+    <li class="link"><a href="/services" style="color: black; text-decoration: none;">Services</a></li>
+    <li class="link"><a href="/contacts" style="color: black; text-decoration: none;">Contacts</a></li>
+    <li class="link"><a href="/post" style="color: black; text-decoration: none;">Post</a></li>
+    <li class="link"><a href="/tours" style="color: black; text-decoration: none;">Tour trong nước</a></li>
+    <li class="link"><a href="/reviews" style="color: black; text-decoration: none;">Reviews</a></li>
+  </ul>
+</nav>
 <div class="container">
   <div class="slide">
     <th:block th:each="city : ${cities}">
@@ -161,7 +177,7 @@
       <div class="content">
           <div class="name" th:text="${city.name}">City Name</div>
           <div class="des" th:text="${city.description}">City Description</div>
-          <button>Book Now</button>
+          <button>Đặt ngay bây giờ</button>
         </div>
       </div>
     </th:block>

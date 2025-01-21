@@ -11,7 +11,8 @@ public class Tour {
 
     private String name;
 
-    @Lob
+    @Lob // Large Object để lưu chuỗi lớn như HTML/Markdown
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     private double price;
@@ -21,6 +22,9 @@ public class Tour {
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
+
+    @Column(name = "city_name") // Liên kết với cột city_name trong database
+    private String cityName;
 
     // Getters and Setters
 
@@ -70,5 +74,13 @@ public class Tour {
 
     public void setCity(City city) {
         this.city = city;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Tour</title>
+    <style>
+        /* Popup styling */
+        #bookingPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+<button type="button" id="openPopup">Đặt tour</button>
+
+<div id="overlay"></div>
+<div id="bookingPopup">
+    <h2>Đặt tour</h2>
+    <form id="bookingForm">
+        <label for="idTour">Mã Tour:</label><br>
+        <input type="number" id="idTour" name="idTour" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="contactPhone">Số điện thoại:</label><br>
+        <input type="text" id="contactPhone" name="contactPhone" required><br><br>
+
+        <button type="submit">Xác nhận</button>
+    </form>
+</div>
+
+<script>
+    // Show and hide popup
+    const openPopup = document.getElementById('openPopup');
+    const overlay = document.getElementById('overlay');
+    const bookingPopup = document.getElementById('bookingPopup');
+
+    openPopup.addEventListener('click', () => {
+        overlay.style.display = 'block';
+        bookingPopup.style.display = 'block';
+    });
+
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        bookingPopup.style.display = 'none';
+    });
+
+    // Handle form submission
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = {
+            idTour: document.getElementById('idTour').value,
+            email: document.getElementById('email').value,
+            contactPhone: document.getElementById('contactPhone').value,
+        };
+
+        const response = await fetch('/api/bookings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+            alert('Đặt tour thành công!');
+            overlay.style.display = 'none';
+            bookingPopup.style.display = 'none';
+        } else {
+            alert('Có lỗi xảy ra. Vui lòng thử lại.');
+        }
+    });
+</script>
+</body>
+</html>

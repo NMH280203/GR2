@@ -24,65 +24,59 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadCityData() {
         if (cityRepository.count() == 0) {
-            City marrakech = new City();
-            marrakech.setName("Marrakech");
-            marrakech.setDescription("Known as the 'Red City', Marrakech is famous for its historical palaces, bustling souks, and vibrant culture. Visitors can explore iconic sites like Jemaa el-Fnaa, the Koutoubia Mosque, and the Majorelle Garden.");
-            marrakech.setImageUrl("marakkech.jpg"); // Replace with actual URL
-            cityRepository.save(marrakech);
+            City hanoi = new City();
+            hanoi.setName("Hà Nội");
+            hanoi.setDescription("Hà Nội là thủ đô của Việt Nam, nổi bật với những di tích lịch sử, văn hóa cổ kính như Hồ Gươm, Lăng Bác và các khu phố cổ. Hà Nội cũng là nơi giao thoa giữa truyền thống và hiện đại, với các công trình kiến trúc độc đáo và ẩm thực phong phú.");
+            hanoi.setImageUrl("hanoi.jpg");
+            cityRepository.save(hanoi);
 
-            City casablanca = new City();
-            casablanca.setName("Casablanca");
-            casablanca.setDescription("Casablanca is Morocco's largest city and economic hub, blending modernity with historic charm. The Hassan II Mosque, one of the largest in the world, is a major attraction, as well as the Corniche seafront and the Royal Palace.");
-            casablanca.setImageUrl("casablanca.jpg"); // Replace with actual URL
-            cityRepository.save(casablanca);
+            City halong = new City();
+            halong.setName("Hạ Long");
+            halong.setDescription("Hạ Long là một trong những kỳ quan thiên nhiên thế giới với hơn 1.600 đảo đá vôi lớn nhỏ. Đây là điểm đến lý tưởng cho những ai yêu thích khám phá cảnh đẹp thiên nhiên và tham gia các hoạt động như chèo thuyền kayak, du lịch vịnh.");
+            halong.setImageUrl("halong.jpg");
+            cityRepository.save(halong);
 
-            City fez = new City();
-            fez.setName("Fez");
-            fez.setDescription("Fez is the spiritual heart of Morocco, home to the world's oldest university and a labyrinthine medina (Fez el-Bali), known for its medieval architecture, bustling markets, and traditional tanneries.");
-            fez.setImageUrl("fez.jpg"); // Replace with actual URL
-            cityRepository.save(fez);
+            City hoiAn = new City();
+            hoiAn.setName("Hội An");
+            hoiAn.setDescription("Phố cổ Hội An nổi tiếng với những con phố cổ kính, các ngôi nhà mang đậm dấu ấn lịch sử và văn hóa. Đây cũng là nơi hội tụ các giá trị nghệ thuật với những cửa hàng thủ công, các món ăn ngon và không gian yên bình.");
+            hoiAn.setImageUrl("hoi-an.jpg");
+            cityRepository.save(hoiAn);
 
-            City chefchaouen = new City();
-            chefchaouen.setName("Chefchaouen");
-            chefchaouen.setDescription("Often referred to as the 'Blue Pearl' of Morocco, Chefchaouen is known for its blue-painted streets and tranquil vibe. It is surrounded by the stunning Rif Mountains, making it a popular spot for nature lovers and photographers.");
-            chefchaouen.setImageUrl("chefchaouen.jpg"); // Replace with actual URL
-            cityRepository.save(chefchaouen);
+            City sapa = new City();
+            sapa.setName("Sapa");
+            sapa.setDescription("Sapa nổi tiếng với những thửa ruộng bậc thang tuyệt đẹp, khí hậu mát mẻ và các dân tộc thiểu số sinh sống. Du khách có thể trekking lên các đỉnh núi cao như Fansipan, tham quan các bản làng, và khám phá văn hóa độc đáo của người dân nơi đây.");
+            sapa.setImageUrl("sapa.jpg");
+            cityRepository.save(sapa);
 
-            City essaouira = new City();
-            essaouira.setName("Essaouira");
-            essaouira.setDescription("Essaouira is a charming coastal city known for its laid-back atmosphere, historic medina, and beautiful beaches. The fortified walls, souks, and fresh seafood make it a must-visit destination for a relaxing seaside escape.");
-            essaouira.setImageUrl("essaouira.jpg"); // Replace with actual URL
-            cityRepository.save(essaouira);
+            City daNang = new City();
+            daNang.setName("Đà Nẵng");
+            daNang.setDescription("Đà Nẵng là thành phố biển nổi tiếng với bãi biển Mỹ Khê đẹp, các cây cầu đặc sắc như Cầu Rồng và Cầu Sông Hàn. Ngoài ra, Đà Nẵng còn là điểm khởi đầu để khám phá các địa điểm như Ngũ Hành Sơn, Bà Nà Hills.");
+            daNang.setImageUrl("da-nang.jpg");
+            cityRepository.save(daNang);
 
-            City agadir = new City();
-            agadir.setName("Agadir");
-            agadir.setDescription("Agadir is famous for its long sandy beaches and sunny climate, making it a favorite resort destination. Visitors enjoy water sports, promenades along the marina, and exploring the nearby Atlas Mountains.");
-            agadir.setImageUrl("agadir.jpg"); // Replace with actual URL
-            cityRepository.save(agadir);
+            City phuQuoc = new City();
+            phuQuoc.setName("Phú Quốc");
+            phuQuoc.setDescription("Phú Quốc là hòn đảo lớn nhất Việt Nam, nổi tiếng với bãi biển đẹp, nước trong xanh, và các khu nghỉ dưỡng cao cấp. Đảo Phú Quốc còn được biết đến với các sản phẩm như nước mắm, tiêu, và các món hải sản tươi ngon.");
+            phuQuoc.setImageUrl("phu-quoc.jpg");
+            cityRepository.save(phuQuoc);
 
-            City meknes = new City();
-            meknes.setName("Meknes");
-            meknes.setDescription("Meknes is one of Morocco’s imperial cities, known for its grand gates, palaces, and the historical medina. It is less crowded but equally rich in history, with landmarks like the Bab Mansour gate and the Mausoleum of Moulay Ismail.");
-            meknes.setImageUrl("meknes.jpg"); // Replace with actual URL
-            cityRepository.save(meknes);
+            City nhaTrang = new City();
+            nhaTrang.setName("Nha Trang");
+            nhaTrang.setDescription("Nha Trang là thành phố biển nổi tiếng với những bãi biển dài, cát trắng và nước biển trong xanh. Đây là điểm đến lý tưởng cho những ai yêu thích các hoạt động thể thao dưới nước và tham quan các điểm du lịch như Vinpearl Land, Hòn Mun, và Tháp Bà Ponagar.");
+            nhaTrang.setImageUrl("nha-trang.jpg");
+            cityRepository.save(nhaTrang);
 
-            City rabat = new City();
-            rabat.setName("Rabat");
-            rabat.setDescription("The capital of Morocco, Rabat offers a mix of modern attractions and historical landmarks. Highlights include the Royal Palace, Hassan Tower, and the Kasbah of the Udayas, as well as beautiful coastal views.");
-            rabat.setImageUrl("rabat.jpg"); // Replace with actual URL
-            cityRepository.save(rabat);
+            City hue = new City();
+            hue.setName("Huế");
+            hue.setDescription("Huế là cố đô của Việt Nam, nổi bật với các di tích lịch sử và văn hóa như Đại Nội, các lăng tẩm của các vua triều Nguyễn. Huế còn nổi bật với ẩm thực đặc sắc và những dòng sông thơ mộng.");
+            hue.setImageUrl("hue.jpg");
+            cityRepository.save(hue);
 
-            City tangier = new City();
-            tangier.setName("Tangier");
-            tangier.setDescription("Tangier is a city of unique charm, positioned on the edge of Africa, where the Mediterranean meets the Atlantic. Known for its multicultural heritage, Tangier features attractions such as the Caves of Hercules, Kasbah Museum, and stunning views of the Strait of Gibraltar.");
-            tangier.setImageUrl("Tangier.jpg"); // Replace with actual URL
-            cityRepository.save(tangier);
-
-            City ouarzazate = new City();
-            ouarzazate.setName("Ouarzazate");
-            ouarzazate.setDescription("Often called the 'Gateway to the Sahara', Ouarzazate is known for its film studios and as a starting point for desert adventures. Visit the iconic Aït Benhaddou, a UNESCO World Heritage site, and explore traditional kasbahs.");
-            ouarzazate.setImageUrl("ouarzazate.jpg"); // Replace with actual URL
-            cityRepository.save(ouarzazate);
+            City muiNe = new City();
+            muiNe.setName("Mũi Né");
+            muiNe.setDescription("Mũi Né nổi tiếng với những đồi cát đỏ, biển xanh và những khu nghỉ dưỡng cao cấp. Đây là điểm đến lý tưởng cho những ai yêu thích thể thao mạo hiểm như lướt ván diều và khám phá các địa điểm tự nhiên.");
+            muiNe.setImageUrl("mui-ne.jpg");
+            cityRepository.save(muiNe);
 
             System.out.println("Sample city data loaded successfully.");
         } else {

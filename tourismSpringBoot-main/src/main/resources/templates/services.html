@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/styles.css}">
-    <title>Services - Visit Morocco</title>
+    <title>Dịch vụ - Du lịch Việt Nam</title>
     <style>
         .services__container {
             padding: 5rem 1rem;
-            max-width: '100%';
+            max-width: 100%;
             margin: auto;
             background-image: url('/assets/images/bg-service.jpg');
             background-size: cover;
@@ -125,62 +124,65 @@
 </head>
 <body>
 <nav>
-    <div class="nav__logo"><a href="/">Visit Morocco</a></div>
+    <div class="nav__logo"><a href="/">Du lịch Việt Nam</a></div>
     <ul class="nav__links">
         <li class="link"><a href="/" style="color: black; text-decoration: none;">Home</a></li>
         <li class="link"><a href="/offers" style="color: black; text-decoration: none;">Offers</a></li>
         <li class="link"><a href="/services" style="color: black; text-decoration: none;">Services</a></li>
         <li class="link"><a href="/contacts" style="color: black; text-decoration: none;">Contacts</a></li>
+        <li class="link"><a href="/post" style="color: black; text-decoration: none;">Post</a></li>
+        <li class="link"><a href="/tours" style="color: black; text-decoration: none;">Tour trong nước</a></li>
+        <li class="link"><a href="/reviews" style="color: black; text-decoration: none;">Reviews</a></li>
     </ul>
 </nav>
 
 <section class="services__container">
-    <h2 class="section__title">Our Services</h2>
-    <p class="section__subtitle">Choose from our range of exclusive services designed to make your journey unforgettable.</p>
+    <h2 class="section__title">Dịch vụ của chúng tôi</h2>
+    <p class="section__subtitle">Hãy lựa chọn trong số nhiều dịch vụ độc quyền của chúng tôi được thiết kế để mang đến cho bạn chuyến đi khó quên.</p>
 
     <div class="service__tiers">
         <div class="service__card">
             <i class="ri-flight-takeoff-line"></i>
-            <h3>Basic Tier</h3>
-            <p>Enjoy affordable travel packages with guided tours and budget accommodations.</p>
+            <h3>Cấp cơ bản</h3>
+            <p>Tận hưởng các gói du lịch giá cả phải chăng với các tour du lịch có hướng dẫn viên và chỗ ở giá rẻ.</p>
         </div>
         <div class="service__card">
             <i class="ri-hotel-line"></i>
-            <h3>Comfort Tier</h3>
-            <p>Comfortable stays with additional perks, including transportation and premium support.</p>
+            <h3>Cấp độ thoải mái</h3>
+            <p>Kỳ nghỉ thoải mái với các quyền lợi bổ sung, bao gồm dịch vụ vận chuyển và hỗ trợ cao cấp.</p>
         </div>
         <div class="service__card">
             <i class="ri-star-line"></i>
-            <h3>Luxury Tier</h3>
-            <p>Exclusive luxury stays, private guides, and everything you need for a lavish experience.</p>
+            <h3>Hạng sang trọng</h3>
+            <p>Kỳ nghỉ sang trọng độc quyền, hướng dẫn viên riêng và mọi thứ bạn cần cho một trải nghiệm xa hoa.</p>
         </div>
     </div>
 
     <!-- Expense Calculator -->
     <div class="calculator__container">
-        <h2>Travel Expense Calculator</h2>
+        <h2>Máy tính chi phí du lịch</h2>
         <form class="calculator__form">
             <div class="form__group">
-                <label for="travelers">Number of Travelers</label>
-                <input type="number" id="travelers" min="1" max="20" placeholder="Enter number of travelers" required>
+                <label for="travelers">Số lượng du khách</label>
+                <input type="number" id="travelers" min="1" max="20" placeholder="Nhập số lượng khách du lịch" required>
             </div>
             <div class="form__group">
-                <label for="luggage">Number of Luggage (per traveler)</label>
-                <input type="number" id="luggage" min="0" max="5" placeholder="Enter luggage count" required>
+                <label for="luggage">Số lượng hành lý (mỗi du khách)</label>
+                <input type="number" id="luggage" min="0" max="5" placeholder="Nhập số lượng hành lý" required>
             </div>
             <div class="form__group">
-                <label for="service-tier">Service Tier</label>
+                <label for="service-tier">Cấp dịch vụ</label>
                 <select id="service-tier" required>
-                    <option value="basic">Basic</option>
-                    <option value="comfort">Comfort</option>
-                    <option value="luxury">Luxury</option>
+                    <option value="basic">Cơ bản</option>
+                    <option value="comfort">Thoải mái</option>
+                    <option value="luxury">Hạng sang</option>
                 </select>
             </div>
             <div class="form__group">
-                <label for="days">Number of Days</label>
-                <input type="number" id="days" min="1" max="30" placeholder="Enter number of days" required>
+                <label for="days">Số ngày</label>
+                <input type="number" id="days" min="1" max="30" placeholder="Nhập số ngày" required>
             </div>
-            <button type="button" onclick="calculateExpenses()">Calculate Expenses</button>
+            <button type="button" onclick="calculateExpenses()">Tính toán chi phí</button>
         </form>
         <div class="result__container" id="result"></div>
     </div>
@@ -188,14 +190,14 @@
 
 <footer>
     <div class="section__container">
-        <h4>Visit Morocco</h4>
+        <h4>Du lịch Việt Nam</h4>
         <div class="social__icons">
             <span><i class="ri-facebook-fill"></i></span>
             <span><i class="ri-twitter-fill"></i></span>
             <span><i class="ri-instagram-line"></i></span>
             <span><i class="ri-linkedin-fill"></i></span>
         </div>
-        <p>"Travel makes one modest. You see what a tiny place you occupy in the world."</p>
+        <p>"Du lịch làm cho con người trở nên khiêm tốn. Bạn thấy mình nhỏ bé biết bao trên thế giới này."</p>
     </div>
 </footer>
 

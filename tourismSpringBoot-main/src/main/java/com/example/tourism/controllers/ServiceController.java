@@ -22,7 +22,7 @@ public class ServiceController {
             @RequestParam("serviceTier") String serviceTier,
             @RequestParam("days") int days) {
 
-        System.out.println("Calculating expenses for: travelers=" + travelers + ", luggage=" + luggage + ", serviceTier=" + serviceTier + ", days=" + days);
+        System.out.println("Tính toán chi phí cho: Du khách =" + travelers + ", hành lý =" + luggage + ", Dịch vụ =" + serviceTier + ", Ngày =" + days);
 
         int baseCostPerDay;
 
@@ -44,6 +44,6 @@ public class ServiceController {
         int costPerTraveler = (baseCostPerDay + luggageCost) * days;
         int totalCost = costPerTraveler * travelers;
 
-        return "Estimated Total Cost: $" + totalCost;
+        return "Tổng chi phí ước tính: $" + totalCost;
     }
 }
